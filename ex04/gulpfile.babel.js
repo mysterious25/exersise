@@ -1,13 +1,13 @@
-const gulp = require("gulp");
-const sass = require("gulp-sass");
-const browserSync = require("browser-sync");
-const concat = require("gulp-concat");
-const uglifyJs = require("gulp-uglifyjs");
-const cssNano = require("gulp-cssnano");
-const rename = require("gulp-rename");
-const autoprefixer = require("gulp-autoprefixer");
-const del = require("del");
-const babel = require("gulp-babel");
+import gulp from 'gulp';
+import sass from 'gulp-sass';
+import browserSync from 'browser-sync';
+import concat from 'gulp-concat';
+import uglifyJs from 'gulp-uglifyjs';
+import cssNano from 'gulp-cssnano';
+import rename from 'gulp-rename';
+import autoprefixer from 'gulp-autoprefixer';
+import del from 'del';
+import babel from 'gulp-babel';
 gulp.task("sass", function() {
     return gulp
         .src("src/sass/**/*.sass")
