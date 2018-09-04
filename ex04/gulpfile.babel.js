@@ -75,7 +75,7 @@ gulp.task("scripts", () =>
 
 gulp.task("compile", function() {
     "use strict";
-    var twig = require("gulp-twig");
+    const twig = require("gulp-twig");
     return gulp
         .src("./index.twig")
         .pipe(
