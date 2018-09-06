@@ -1,4 +1,4 @@
-const gulp = require("gulp");
+import gulp from 'gulp';
 const sass = require("gulp-sass");
 const browserSync = require("browser-sync");
 const concat = require("gulp-concat");
@@ -7,14 +7,16 @@ const cssNano = require("gulp-cssnano");
 const rename = require("gulp-rename");
 const autoprefixer = require("gulp-autoprefixer");
 const del = require("del");
-const babel = require("gulp-babel");
+import babel from 'gulp-babel';
+var twig = require('gulp-twig');
+
 gulp.task("sass", function () {
   return gulp
     .src("src/sass/**/*.sass")
     .pipe(sass())
     .pipe(
       autoprefixer(["last 10 versions"], {
-        cascade: true
+        cascade: truegu
       })
     )
     .pipe(gulp.dest("src/css"))
@@ -87,6 +89,12 @@ gulp.task("compile", function () {
       })
     )
     .pipe(gulp.dest("./"));
+});
+
+gulp.task('twig', function() {
+    return gulp.src('ex03/index.twig')
+        .pipe(twig())
+        .pipe(gulp.dest('dist'));
 });
 
 gulp.task("default", ["compile"]);
